@@ -4,7 +4,6 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-
         Pilha pilha = new Pilha();
         pilha.push(10);
         pilha.push(1);
@@ -19,10 +18,8 @@ public class Main {
             System.out.println("saiu da pilha:" + element);
         }
 
-        pilha.pop();
 
     }
-
 
 }
 
