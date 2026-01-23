@@ -4,19 +4,19 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        Pilha pilha = new Pilha();
-        pilha.push(10);
-        pilha.push(1);
-        pilha.push(2);
-        pilha.push(4);
-        pilha.push(5);
+        System.out.print("Qual o Tamanho Da Pilha?: ");
+        Pilha pilha = new Pilha(sc.nextInt());
 
-        pilha.top();
+        while (pilha.verify()){
+            System.out.print("Adicione os Valores: ");
+            pilha.push(sc.nextInt());
+        }
 
         while (!pilha.isEmpty()){
-            int element = pilha.pop();
-            System.out.println("saiu da pilha:" + element);
+            int x = pilha.pop();
+            System.out.println("Numero retirado: " + x  );
         }
+
 
 
     }

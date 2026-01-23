@@ -1,7 +1,12 @@
 public class Pilha {
 
-  int[] vect = new int[10];
-  int topo = -1;
+    int topo;
+    int[] vect;
+
+    public Pilha(int value){
+    vect = new int[value];
+    topo = -1;
+    }
 
   public void push(int e){
    if (isFull()){
@@ -21,11 +26,23 @@ public class Pilha {
   }
 
     public boolean isFull(){
-        return topo == 9;
+        return topo == vect.length;
     }
     public boolean isEmpty(){
       return topo == -1;
-     }
+    }
+
+    public boolean verify(){
+        boolean e = false;
+        for(int i : vect){
+            if(i == 0){
+              e = true;
+            }
+        }
+        return e;
+    }
+
+
 
      public int top(){
       return vect[topo];
