@@ -8,20 +8,25 @@ public class Main {
         do{
         System.out.print("Qual o Tamanho Da Fila?: ");
         size = sc.nextInt();
-        } while (size <= 0);{
-            Fila fila = new Fila(sc.nextInt());
-
-            while (!fila.isFull()){
-                System.out.print("Adicione os Valores: ");
-                fila.insert(sc.nextInt());
-            }
-
-            while (!fila.isEmpty()){
-                int x = fila.remove();
-                System.out.println("Numero retirado: " + x  );
-            }
-
+        if (size <= 0){
+            System.out.println("Escolha um numero acima de 0...");
         }
+        } while (size <= 0);
+
+        Fila fila = new Fila(size);
+
+        while (!fila.isFull()){
+            System.out.print("Adicione os Valores: ");
+            fila.insert(sc.nextInt());
+        }
+
+        while (!fila.isEmpty()){
+            int x = fila.remove();
+            System.out.println("Numero retirado: " + x  );
+        }
+
+
+
 
 
 

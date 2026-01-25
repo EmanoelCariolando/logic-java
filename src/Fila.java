@@ -4,8 +4,10 @@ public class Fila {
      int last;
      int total;
 
-     public Fila(int value){
-         this.value = new int[value];
+     public Fila(){}
+
+     public Fila(int number){
+         value = new int[number];
          first = 0;
          last = 0;
          total = 0;
