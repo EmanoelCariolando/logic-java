@@ -3,34 +3,33 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int size;
+        int choose;
 
-        do{
-        System.out.print("Qual o Tamanho Da Fila?: ");
-        size = sc.nextInt();
-        if (size <= 0){
-            System.out.println("Escolha um numero acima de 0...");
-        }
-        } while (size <= 0);
+        do {
+            showChoose();
+            choose = sc.nextInt();
 
-        Fila fila = new Fila(size);
+         switch (choose){
+             case 1:
 
-        while (!fila.isFull()){
-            System.out.print("Adicione os Valores: ");
-            fila.insert(sc.nextInt());
-        }
+                 break;
+             case 2:
 
-        while (!fila.isEmpty()){
-            int x = fila.remove();
-            System.out.println("Numero retirado: " + x  );
-        }
+                 break;
+             case 3:
+                 System.out.println("Saindo do Progama... ");
+                 break;
+             default:
+                 System.out.println("Opção invalida,escolha as da tela... ");
+         }
+        }while (choose != 3);
 
+    }
 
-
-
-
-
-
+    public static void showChoose(){
+     System.out.println("1 - Adicione a Lista ");
+     System.out.println("2 - Mostrar Lista ");
+     System.out.println("3 - Sair ");
     }
 
 }
