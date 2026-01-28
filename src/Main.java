@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+        List list = new List();
         int choose;
 
         do {
@@ -11,10 +12,12 @@ public class Main {
 
          switch (choose){
              case 1:
-
+              System.out.println("Escolha um Numero Para Adicionar: ");
+              int number = sc.nextInt();
+              list.add(number);
                  break;
              case 2:
-
+                 System.out.println(list.toString());
                  break;
              case 3:
                  System.out.println("Saindo do Progama... ");
