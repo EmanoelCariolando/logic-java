@@ -1,24 +1,57 @@
 public class List {
 
-    private Node head;
+    private Node first;
+    private Node end;
+    private int total;
 
     public void add(int value){
-        Node node = new Node();
-        node.setValue(value);
-        node.setNext(head);
-        head = node;
+        Node newNode = new Node(value);
+        if (this.first == null && this.end == null){
+            this.first = newNode;
+            this.end = newNode;
+        }else {
+            this.end.setNext(newNode);
+            this.end = newNode;
+        }
+        total++;
     }
 
-    @Override
-    public String toString() {
-        StringBuffer sb = new StringBuffer();
-        sb.append("[");
-        Node p = head;
-        while (p != null){
-            sb.append(p.getValue() + " ");
-            p = p.getNext();
+    public Node get(int position){
+        Node atual = this.first;
+     for (int i=0; i < position; i++){
+        if(atual.getNext() != null){
+            atual = atual.getNext();
         }
-        sb.append("]");
-        return sb.toString();
+     }
+     return atual;
+    }
+
+
+    public void delet(){
+
+    }
+
+    public Node getEnd() {
+        return end;
+    }
+
+    public void setEnd(Node end) {
+        this.end = end;
+    }
+
+    public Node getFirst() {
+        return first;
+    }
+
+    public void setFirst(Node first) {
+        this.first = first;
+    }
+
+    public int getTotal() {
+        return total;
+    }
+
+    public void setTotal(int total) {
+        this.total = total;
     }
 }

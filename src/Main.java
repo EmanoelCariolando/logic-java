@@ -13,15 +13,18 @@ public class Main {
          switch (choose){
              case 1:
               System.out.println("Escolha um Numero Para Adicionar: ");
-              int number = sc.nextInt();
-              list.add(number);
+              list.add(sc.nextInt());
                  break;
              case 2:
-                 System.out.println(list.toString());
+                  System.out.println("Primeiro da Lista: " + list.getFirst().getValue());
+                  System.out.println("Ultimo da Lista: " + list.getEnd().getValue());
+                  System.out.println("total: " + list.getTotal());
                  break;
              case 3:
                  System.out.println("Saindo do Progama... ");
                  break;
+
+                 
              default:
                  System.out.println("Opção invalida,escolha as da tela... ");
          }
@@ -31,8 +34,9 @@ public class Main {
 
     public static void showChoose(){
      System.out.println("1 - Adicione a Lista ");
-     System.out.println("2 - Mostrar Lista ");
+     System.out.println("2 - Mostrar Info Da Lista ");
      System.out.println("3 - Sair ");
+     System.out.print("Digite: ");
     }
 
 }
