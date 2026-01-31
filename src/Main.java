@@ -26,7 +26,9 @@ public class Main {
                  System.out.println("total: " + list.getTotal());
                  break;
              case 4:
-                 System.out.println();
+                 System.out.print("Digite o Valor a Ser Removido:  ");
+                 int value = list.delete(sc.nextInt());
+                 System.out.println("Valor Removido: " + value);
                  break;
              case 5:
                  System.out.println("Saindo do Progama... ");
@@ -44,7 +46,7 @@ public class Main {
      System.out.println("1 - Adicione a Lista ");
      System.out.println("2 - Pegar Valor Na Lista ");
      System.out.println("3 - Mostrar Info Da Lista ");
-     System.out.println("4 - Delete um Valor ");
+     System.out.println("4 - Delete um Valor da Lista");
      System.out.println("5 - Sair ");
      System.out.print("Digite: ");
     }
