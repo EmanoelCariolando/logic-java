@@ -26,7 +26,11 @@ public class Main {
                  System.out.println("total: " + list.getTotal());
                  break;
              case 4:
+                 System.out.println();
+                 break;
+             case 5:
                  System.out.println("Saindo do Progama... ");
+                 break;
 
                  
              default:
@@ -40,7 +44,8 @@ public class Main {
      System.out.println("1 - Adicione a Lista ");
      System.out.println("2 - Pegar Valor Na Lista ");
      System.out.println("3 - Mostrar Info Da Lista ");
-     System.out.println("4 - Sair ");
+     System.out.println("4 - Delete um Valor ");
+     System.out.println("5 - Sair ");
      System.out.print("Digite: ");
     }
 

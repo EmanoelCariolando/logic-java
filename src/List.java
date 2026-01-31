@@ -27,8 +27,30 @@ public class List {
     }
 
 
-    public void delet(){
+    public int delete(int e) {
+        Node atual = this.first;
+        Node anterior = null;
 
+        while (atual != null) {
+            if (atual.getValue() == e) {
+
+                int value = atual.getValue();
+
+                if (anterior == null) {
+                    first = atual.getNext();
+                } else {
+                    anterior.setNext(atual.getNext());
+                }
+
+                total--;
+                return value;
+            }
+
+            anterior = atual;
+            atual = atual.getNext();
+        }
+
+        return -1;
     }
 
     public Node getEnd() {
