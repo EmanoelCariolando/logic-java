@@ -1,11 +1,11 @@
-public class List {
+public class List<T> {
 
-    private Node first;
-    private Node end;
+    private Node<T> first;
+    private Node<T> end;
     private int total;
 
     public void add(int value){
-        Node newNode = new Node(value);
+        Node<T> newNode = new Node<T>(value);
         if (this.first == null && this.end == null){
             this.first = newNode;
             this.end = newNode;
@@ -16,8 +16,8 @@ public class List {
         total++;
     }
 
-    public Node get(int position){
-        Node atual = this.first;
+    public Node<T> get(int position){
+        Node<T> atual = this.first;
      for (int i=0; i < position; i++){
         if(atual.getNext() != null){
             atual = atual.getNext();
@@ -28,8 +28,8 @@ public class List {
 
 
     public int delete(int e) {
-        Node atual = this.first;
-        Node anterior = null;
+        Node<T> atual = this.first;
+        Node<T> anterior = null;
 
         while (atual != null) {
             if (atual.getValue() == e) {
@@ -53,19 +53,19 @@ public class List {
         return -1;
     }
 
-    public Node getEnd() {
+    public Node<T> getEnd() {
         return end;
     }
 
-    public void setEnd(Node end) {
+    public void setEnd(Node<T> end) {
         this.end = end;
     }
 
-    public Node getFirst() {
+    public Node<T> getFirst() {
         return first;
     }
 
-    public void setFirst(Node first) {
+    public void setFirst(Node<T> first) {
         this.first = first;
     }
 

@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List list = new List();
+        List<Integer> list = new List<Integer>();
         int choose;
 
         do {
@@ -38,7 +38,7 @@ public class Main {
              default:
                  System.out.println("Opção invalida,escolha as da tela... ");
          }
-        }while (choose != 3);
+        }while (choose != 5);
 
     }
 
