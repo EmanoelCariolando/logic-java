@@ -1,55 +1,36 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        List<Integer> list = new List<Integer>();
-        int choose;
 
-        do {
-            showChoose();
-            choose = sc.nextInt();
+        int[] vector = new int[8];
 
-         switch (choose){
-             case 1:
-              System.out.print("Escolha um Numero Para Adicionar: ");
-              list.add(sc.nextInt());
-                 break;
-             case 2:
-                 System.out.print("Escolha uma posição para pegar o valor: ");
-                 int number = sc.nextInt();
-                 System.out.println("Item na posição "+ number + ": " + list.get(number));
-                 break;
-             case 3:
-                 System.out.println("Primeiro da Lista: " + list.getFirst().getValue());
-                 System.out.println("Ultimo da Lista: " + list.getEnd().getValue());
-                 System.out.println("total: " + list.getTotal());
-                 break;
-             case 4:
-                 System.out.print("Digite o Valor a Ser Removido:  ");
-                 int value = list.delete(sc.nextInt());
-                 System.out.println("Valor Removido: " + value);
-                 break;
-             case 5:
-                 System.out.println("Saindo do Progama... ");
-                 break;
+        for (int i=0; i < vector.length; i++){
+            vector[i] = (int) (Math.random() * 8);
+            System.out.println(vector[i]);
+        }
 
-                 
-             default:
-                 System.out.println("Opção invalida,escolha as da tela... ");
-         }
-        }while (choose != 5);
+        boolean find = false;
+
+        System.out.print("qual numero vc busca?: ");
+        int number = sc.nextInt();
+
+        for (int i : vector){
+           if (i == number){
+               find = true;
+               break;
+           }
+        }
+        if (find){
+            System.out.println("Achou o numero!");
+        }
+        else {
+            System.out.println("Não Achou o numero!");
+        }
+
 
     }
-
-    public static void showChoose(){
-     System.out.println("1 - Adicione a Lista ");
-     System.out.println("2 - Pegar Valor Na Lista ");
-     System.out.println("3 - Mostrar Info Da Lista ");
-     System.out.println("4 - Delete um Valor da Lista");
-     System.out.println("5 - Sair ");
-     System.out.print("Digite: ");
-    }
-
 }
 
