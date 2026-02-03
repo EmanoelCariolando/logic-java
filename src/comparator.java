@@ -6,9 +6,9 @@ public class comparator {
 
         ArrayList<Integer> vetor = new ArrayList<Integer>();
 
-        //Vector limit
+        // Vector limit
 
-        int limit = 100000;
+        int limit = 1000;
         long firstTime = System.currentTimeMillis();
         long lastTime;
 
@@ -19,7 +19,7 @@ public class comparator {
         System.out.println("Adicionou " + limit + " elementos no vetor");
         System.out.println(lastTime - firstTime);
 
-        //my list limit
+        // my list limit
 
         firstTime = System.currentTimeMillis();
         for (int i=0; i < limit; i++){
@@ -30,5 +30,27 @@ public class comparator {
         System.out.println(lastTime - firstTime);
 
 
+        // Read vector
+
+        firstTime = System.currentTimeMillis();
+        for (int i=0; i < limit; i++){
+            vetor.get(i);
+        }
+        lastTime = System.currentTimeMillis();
+        System.out.println("leu " + limit + " elementos no vetor");
+        System.out.println(lastTime - firstTime);
+
+        // Read myList
+
+        firstTime = System.currentTimeMillis();
+        for (int i=0; i < limit; i++){
+            myList.get(i);
+        }
+        lastTime = System.currentTimeMillis();
+        System.out.println("leu " + limit + " elementos no vetor");
+        System.out.println(lastTime - firstTime);
+
     }
+
+
 }
