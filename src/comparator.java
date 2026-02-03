@@ -8,7 +8,7 @@ public class comparator {
 
         // Vector limit
 
-        int limit = 10;
+        int limit = 10000;
         long firstTime = System.currentTimeMillis();
         long lastTime;
 
