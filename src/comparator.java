@@ -47,7 +47,7 @@ public class comparator {
             myList.get(i);
         }
         lastTime = System.currentTimeMillis();
-        System.out.println("leu " + limit + " elementos no vetor");
+        System.out.println("leu " + limit + " elementos na sua lista");
         System.out.println(lastTime - firstTime);
 
     }
