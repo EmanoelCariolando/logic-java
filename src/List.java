@@ -76,4 +76,8 @@ public class List<T> {
     public void setTotal(int total) {
         this.total = total;
     }
+
+    public Iterator<T> getIterator(){
+        return new Iterator<>(this.first);
+    }
 }

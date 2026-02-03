@@ -8,7 +8,7 @@ public class comparator {
 
         // Vector limit
 
-        int limit = 1000;
+        int limit = 10;
         long firstTime = System.currentTimeMillis();
         long lastTime;
 
@@ -43,8 +43,9 @@ public class comparator {
         // Read myList
 
         firstTime = System.currentTimeMillis();
-        for (int i=0; i < limit; i++){
-            myList.get(i);
+        Iterator<Integer> iterator = myList.getIterator();
+        while (iterator.nextNode()){
+            iterator.nextIterator();
         }
         lastTime = System.currentTimeMillis();
         System.out.println("leu " + limit + " elementos na sua lista");
