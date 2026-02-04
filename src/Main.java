@@ -15,7 +15,7 @@ public class Main {
         int assistant;
         for (int i=0; i < vector.length; i++){
             for (int j= i+1; j < vector.length; j++){
-                if (vector[i] >= vector[j]) {
+                if (vector[i] > vector[j]) {
                     assistant = vector[i];
                     vector[i] = vector[j];
                     vector[j] = assistant;
@@ -23,14 +23,9 @@ public class Main {
             }
         }
         System.out.println("vetor ordenado");
-        for(int i=0; i < vector.length; i++ ){
+        for(int i=0; i < vector.length; i++){
             System.out.println(vector[i]);
         }
-
-
-
-
-
     }
 }
 
