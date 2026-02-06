@@ -11,19 +11,20 @@ public class Main {
             vector[i] = (int) (Math.random() * vector.length);
             System.out.println(vector[i]);
         }
-
-        int assistant;
-        for (int i=0; i < vector.length; i++){
-            for (int j= i+1; j < vector.length; j++){
-                if (vector[i] > vector[j]) {
-                    assistant = vector[i];
-                    vector[i] = vector[j];
-                    vector[j] = assistant;
-                }
+        int aux, j;
+        for (int i=1; i < vector.length; i++){
+            aux = vector[i];
+            j = i - 1;
+            while (j >= 0 && vector[j] > aux){
+                vector[j + 1] = vector[j];
+                j--;
             }
+            vector[j + 1] = aux;
         }
-        System.out.println("vetor ordenado");
-        for(int i=0; i < vector.length; i++){
+
+        System.out.println("Ordem");
+
+        for (int i=1; i < vector.length; i++){
             System.out.println(vector[i]);
         }
     }
