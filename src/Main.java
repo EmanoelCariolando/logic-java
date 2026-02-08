@@ -7,24 +7,29 @@ public class Main {
 
         int[] vector = new int[10];
 
+        System.out.println("disordering");
         for (int i=0; i < vector.length; i++ ){
             vector[i] = (int) (Math.random() * vector.length);
             System.out.println(vector[i]);
         }
-        int aux, j;
-        for (int i=1; i < vector.length; i++){
-            aux = vector[i];
-            j = i - 1;
-            while (j >= 0 && vector[j] > aux){
-                vector[j + 1] = vector[j];
-                j--;
-            }
-            vector[j + 1] = aux;
+
+        int smaller, assis;
+        for (int i = 0; i < vector.length; i++){
+            smaller = i;
+             for (int j = i+1; j < vector.length; j++){
+                if (vector[j] < vector[smaller]){
+                    smaller = j;
+                }
+              }
+
+            assis = vector[smaller];
+            vector[smaller] = vector[i];
+            vector[i] = assis;
+
         }
 
-        System.out.println("Ordem");
-
-        for (int i=1; i < vector.length; i++){
+        System.out.println("ordered");
+        for (int i=0; i < vector.length; i++ ){
             System.out.println(vector[i]);
         }
     }
