@@ -18,19 +18,17 @@ public class Main {
         for (int i = n / 2 - 1; i >= 0; i--){
             heapSort(vector,n,i);
         }
-        System.out.println("almost ordering");
-        for (int i = 0; i < vector.length; i++){
-         System.out.println(vector[i] + "");
-        }
+
         for (int j = n-1; j > 0; j--){
             int aux = vector[0];
             vector[0] = vector[j];
             vector[j] = aux;
 
-            heapSort(vector,n,j);
+            heapSort(vector,j,0);
         }
 
         System.out.println("ordering");
+        
         for (int i = 0; i < vector.length; i++){
             System.out.println(vector[i] + "");
         }
