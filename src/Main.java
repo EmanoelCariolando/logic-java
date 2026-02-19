@@ -8,49 +8,45 @@ public class Main {
         int[] vector = new int[10];
 
         System.out.println("disordering");
-        for (int i=0; i < vector.length; i++ ){
+        for (int i = 0; i < vector.length; i++) {
             vector[i] = (int) (Math.random() * vector.length);
             System.out.println(vector[i]);
         }
-
-        int n = vector.length;
-
-        for (int i = n / 2 - 1; i >= 0; i--){
-            heapSort(vector,n,i);
-        }
-
-        for (int j = n-1; j > 0; j--){
-            int aux = vector[0];
-            vector[0] = vector[j];
-            vector[j] = aux;
-
-            heapSort(vector,j,0);
-        }
+        quickSort(vector,0, vector.length - 1);
 
         System.out.println("ordering");
-        
-        for (int i = 0; i < vector.length; i++){
-            System.out.println(vector[i] + "");
+        for (int i = 0; i < vector.length; i++) {
+            System.out.println(vector[i]);
         }
     }
-    private static void heapSort(int[] vect,int n,int i){
-     int source = i;
-     int left = 2*i + 1;
-     int right = 2*i + 2;
-     
-     if (left < n && vect[left] > vect[source]){
-         source = left;
-     }
-     if (right < n && vect[right] > vect[source]){
-         source = right;
-     }
-     if(source != i){
-         int aux = vect[i];
-         vect[i] = vect[source];
-         vect[source] = aux;
-
-         heapSort(vect,n,source);
-     }
+    static void quickSort(int[] vect, int left, int right){
+       if (left < right){
+           int p = division(vect,left,right);
+           quickSort(vect,left,p);
+           quickSort(vect, p + 1, right);
+       }
+    }
+    static int division(int[] vect, int left, int right){
+       int mid = (int) (left + right) / 2;
+       int pivot = vect[mid];
+        int i = left - 1;
+        int j = right + 1;
+        while (true){
+            do {
+               i++;
+            }while (vect[i] < pivot);
+            do {
+               j--;
+            }while (vect[j] > pivot);
+            if (i >= j){
+                return j;
+            }
+            int aux = vect[i];
+            vect[i] = vect[j];
+            vect[j] = aux;
+        }
     }
 }
+
+
 
