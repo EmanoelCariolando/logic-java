@@ -35,9 +35,11 @@ public class Main {
             do {
                i++;
             }while (vect[i] < pivot);
+
             do {
                j--;
             }while (vect[j] > pivot);
+
             if (i >= j){
                 return j;
             }
