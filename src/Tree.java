@@ -13,17 +13,17 @@ public class Tree<T extends Comparable<T>> {
         if (source == null) {
             this.source = newElement;
         } else {
-            Element atual = this.source;
+            Element<T> atual = this.source;
 
             while (true) {
-                if (newElement.getValue().compareTo(source.getValue()) == -1){
+                if (newElement.getValue().compareTo(atual.getValue()) == -1){
                     if (atual.getLeft() != null) {
                         atual = atual.getLeft();
                     } else {
                         atual.setLeft(newElement);
                         break;
                     }
-                }else {
+                }else  {
                     if (atual.getRight() != null){
                         atual = atual.getRight();
                     }
@@ -33,6 +33,32 @@ public class Tree<T extends Comparable<T>> {
                     }
                 }
             }
+        }
+    }
+
+    public Element<T> getSource() {
+        return source;
+    }
+
+    public void atOrder(Element<T> atual){
+        if (atual != null){
+            atOrder(atual.getLeft());
+            System.out.println(atual.getValue());
+            atOrder(atual.getRight());
+        }
+    }
+    public void preOrder(Element<T> atual){
+        if (atual != null){
+            System.out.println(atual.getValue());
+            preOrder(atual.getLeft());
+            preOrder(atual.getRight());
+        }
+    }
+    public void postOrder(Element<T> atual){
+        if (atual != null){
+            postOrder(atual.getLeft());
+            postOrder(atual.getRight());
+            System.out.println(atual.getValue());
         }
     }
 }
