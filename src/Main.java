@@ -16,6 +16,7 @@ public class Main {
         tree.adding(18);
         tree.adding(13);
         tree.adding(20);
+        tree.adding(111);
         System.out.println("IN ORDER");
         tree.atOrder(tree.getSource());
         System.out.println("PRE ORDER");
