@@ -61,4 +61,20 @@ public class Tree<T extends Comparable<T>> {
             System.out.println(atual.getValue());
         }
     }
+    public boolean remove(T value){
+       Element<T> actual = this.source;
+       Element<T> actualFather = null;
+       while (actual != null){
+           if (actual.getValue().equals(value)){
+               break;
+           } else if (value.compareTo(actual.getValue()) == -1){
+               actual = actual.getLeft();
+           }
+           else {
+               actual = actual.getRight();
+           }
+       }
+
+    }
+
 }
