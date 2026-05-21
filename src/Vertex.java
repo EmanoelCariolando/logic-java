@@ -2,13 +2,13 @@ import java.util.ArrayList;
 
 public class Vertex<T> {
     private T dado;
-    private ArrayList<T> arestasEntrada;
-    private ArrayList<T> arestasSaida;
+    private ArrayList<Edge<T>> arestasEntrada;
+    private ArrayList<Edge<T>> arestasSaida;
 
     public Vertex(T value){
         this.dado = value;
-        this.arestasEntrada = new ArrayList<T>();
-        this.arestasSaida = new ArrayList<T>();
+        this.arestasEntrada = new ArrayList<Edge<T>>();
+        this.arestasSaida = new ArrayList<Edge<T>>();
     }
 
     public T getDado() {
